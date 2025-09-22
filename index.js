@@ -1,6 +1,6 @@
 let numeroSecreto = Math.floor(Math.random() * 100) + 1;
 let tentativas = 0;
-const maxTentativas = 10;
+const maxTentativas = 5;
 
 const input = document.getElementById('palpite');
 const btnEnviar = document.getElementById('enviar');
@@ -19,15 +19,15 @@ btnEnviar.addEventListener('click', function () {
   tentativas++;
 
   if (palpite === numeroSecreto) {
-    resultado.textContent = `🎉 Parabéns! Você acertou em ${tentativas} tentativa(s)!`;
+    resultado.textContent = `Parabéns! Você acertou em ${tentativas} tentativa(s)!`;
     encerrarJogo();
   } else if (tentativas >= maxTentativas) {
-    resultado.textContent = `❌ Você perdeu! O número era ${numeroSecreto}.`;
+    resultado.textContent = `Você perdeu! O número era ${numeroSecreto}.`;
     encerrarJogo();
   } else if (palpite < numeroSecreto) {
-    resultado.textContent = '🔻 Muito baixo!';
+    resultado.textContent = 'Muito baixo!';
   } else {
-    resultado.textContent = '🔺 Muito alto!';
+    resultado.textContent = 'Muito alto!';
   }
 
   tentativasEl.textContent = `Tentativas: ${tentativas}/${maxTentativas}`;
